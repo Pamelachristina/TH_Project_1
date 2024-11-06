@@ -22,6 +22,22 @@ public class Prompter {
         return scanner.nextInt();
     }
 
+    // Method to print a success message when the guess is correct
+    public void printSuccessMessage(int attempts) {
+        System.out.printf("Congrats! You got it in %d attempts!%n", attempts);
+    }
+
+
+    // Method to print a message if the guess is too high
+    public void printTooHighMessage() {
+        System.out.println("Incorrect. Your guess is too high. Try a lower number!");
+    }
+
+    // Method to print a message if the guess is too low
+    public void printTooLowMessage() {
+        System.out.println("Incorrect. Your guess is too low. Try a higher number!");
+    }
+
     // Prompt for a guess
     public int promptForGuess(Jar jar) {
         int guess = 0;

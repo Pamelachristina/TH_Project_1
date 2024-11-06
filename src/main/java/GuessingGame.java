@@ -21,6 +21,7 @@ public class GuessingGame {
 
         int guess;
         int attempts = 0;
+        boolean correctGuess = false;
 
         // Start guessing loop
         do {
@@ -29,15 +30,18 @@ public class GuessingGame {
 
             // Check if the guess is correct
             if (jar.isCorrectGuess(guess)) {
-                System.out.printf("Congrats! You got it in %d attempts!%n", attempts);
-                break; // Exit the loop as the correct guess has been made
+                prompter.printSuccessMessage(attempts);
+                correctGuess = true; // Exit the loop as the correct guess has been made
             } else {
-                System.out.println("Incorrect guess. Try again!");
+                // Provide feedback based on whether the guess was too high or too low
+                if (guess > jar.getCurrentNumOfItems()) {
+                    prompter.printTooHighMessage();
+                } else {
+                    prompter.printTooLowMessage();
+                }
             }
-
-        } while (true);
+        } while (!correctGuess); // Keep looping until the correct guess is made
     }
 }
-
 
 

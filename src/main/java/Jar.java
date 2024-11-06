@@ -29,7 +29,7 @@ public class Jar {
     private void Fill() {
         Random random = new Random();
         currentNumOfItems = random.nextInt(maxItems) + 1;
-        System.out.printf("The jar has been filled with %d %s.%n", currentNumOfItems, itemName);
+        //System.out.printf("The jar has been filled with %d %s.%n", currentNumOfItems, itemName);
     }
 
     //Create a getter method for the current number of items.
